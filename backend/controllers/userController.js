@@ -97,11 +97,11 @@ const loginUser = asyncHandler(async (req, res) => {
     const token = generateToken(_id);
 
     res.cookie("token", token, {
-      path: "/",
-      httpOnly: true,
+      // path: "/",
+      // httpOnly: true,
       expires: new Date(Date.now() + 1000 * 86400),
-      sameSite: "none",
-      secure: false,
+      // sameSite: "none",
+      // secure: true,
     });
 
     res.status(200).json({
